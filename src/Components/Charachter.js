@@ -5,7 +5,7 @@ function Character(props) {
          <div>
              <h2 className={'target'}>{name}</h2>
              <p>{desc}</p>
-             <img src={photo}alt=""/>
+             <img src={photo} alt=""/>
          </div>
      )
  }
