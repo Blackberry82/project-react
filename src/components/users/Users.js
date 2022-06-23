@@ -16,7 +16,6 @@ export default function Users() {
         setUser(item);
     }
 
-
     return (
         <div>
 
