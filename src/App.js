@@ -1,6 +1,6 @@
 import Users from "./components/users/Users";
 
-import {useState} from "@types/react";
+import {useState} from "react";
 import {getUserPosts} from "./services";
 
 export default function App() {
