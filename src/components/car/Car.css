@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.car {
+    border: 1px solid black;
+    padding: 5px;
+
+}
+.tools button {
+    margin: 5px;
+}
