@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    background: lime;
+    justify-content: space-around;
+    padding: 15px;
+}
+.post {
+    width: 35%;
+    background: #a9f195;
+}
+.comment {
+    width: 60%;
+}
