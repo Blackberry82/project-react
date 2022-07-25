@@ -3,11 +3,11 @@ import {useEffect, useState} from "react";
 import {postService} from "../../services";
 import PostComponent from "./PostComponent";
 
-export default function PostsComponent() {
+export default function PostsComponent(userId) {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        postService.getAll().then(({data}) => setPosts(data))
+        postService.getAllByUserId(userId).then(({data}) => setPosts(data))
     }, []);
 
     return (

@@ -1,12 +1,17 @@
-export default function UserComponent({user}) {
+import PostsComponent from "../posts/PostsComponent";
+
+export default function UserComponent({user, userIdState}) {
+    const {id, name, email} = user;
+    const {userId, setUserId} = userIdState;
 
     return (
         <div>
-                <div>id:  {user.id}</div>
-                <h3>{user.name}</h3>
-                <div>{user.email}</div>
+                <div>id:  {id}</div>
+                <h3>{name}</h3>
+                <div>{email}</div>
             <br/>
-            <button>Ditailes</button>
+            <button onClick={() => setUserId(id)}>Show Posts</button>
+            {userId === id && <PostsComponent userId={id}/>}
             <hr/>
         </div>
     );

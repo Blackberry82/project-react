@@ -5,6 +5,7 @@ import UserComponent from "./UserComponent";
 
 export default function UsersComponent() {
     const [users, setUsers] = useState([]);
+    const userIdState = useState(null);
 
     useEffect(() => {
         userService.getAll().then(({data}) => setUsers(data))
@@ -13,7 +14,7 @@ export default function UsersComponent() {
     return (
         <div>
             {
-                users.map(user => <UserComponent key={user.id} user={user}/>)
+                users.map(user => <UserComponent key={user.id} user={user} userIdState={userIdState}/>)
             }
         </div>
     );
