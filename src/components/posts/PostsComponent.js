@@ -1,14 +1,15 @@
 import {useEffect, useState} from "react";
 
-import {getPost} from "../../services";
+import {postService} from "../../services";
 import PostComponent from "./PostComponent";
 
 export default function PostsComponent() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        getPost().then(({data}) => setPosts(data))
+        postService.getAll().then(({data}) => setPosts(data))
     }, []);
+
     return (
         <div>
             {

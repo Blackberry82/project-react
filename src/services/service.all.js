@@ -1,9 +1,18 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
-    baseURL:'https://jsonplaceholder.typicode.com/'
-});
-const getUser = () => axiosInstance('users').then(value => value);
-const getPost = () => axiosInstance('posts');
+import {baseURL} from "../constances";
+import {urls} from "../constances";
 
-export {getUser,getPost};
+const axiosService = axios.create({baseURL});
+
+const userService = {
+    getAll: () => axiosService.get(urls.users)
+};
+
+const postService = {
+    getAll: () => axiosService.get(urls.posts),
+    getAllByUserId: (userId) => axiosService.get(urls.posts, {params: {userId}})
+};
+
+
+export {axiosService, userService, postService};
