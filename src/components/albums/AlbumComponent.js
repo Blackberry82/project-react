@@ -1,10 +1,9 @@
 export default function AlbumComponent({album}) {
-    const {userId, id, title} = album;
     return (
         <div>
-            <div>userId - {userId}</div>
-            <div>id - {id}</div>
-            <h4>{title}</h4>
+                <div>id - {album.id}</div>
+                <div>userId - {album.userId}</div>
+                <h2>{album.title}</h2>
             <hr/>
         </div>
     );

@@ -1,14 +1,15 @@
 import {useEffect, useState} from "react";
 
-import {getAlbums} from "../../services";
+import {albumsService} from "../../services";
 import AlbumComponent from "./AlbumComponent";
 
 export default function AlbumsComponent() {
     const [albums, setAlbums] = useState([]);
 
     useEffect(() => {
-       getAlbums().then(value => setAlbums([...value.data]))
+        albumsService().then(({data}) => setAlbums(data))
     }, []);
+
     return (
         <div>
             {

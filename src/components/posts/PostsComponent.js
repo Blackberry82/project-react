@@ -1,7 +1,7 @@
 import {useParams} from "react-router";
 import {useEffect, useState} from "react";
 
-import {getPosts} from "../../services";
+import {postCurrentService} from "../../services";
 import PostComponent from "./PostComponent";
 
 export default function PostsComponent() {
@@ -10,13 +10,13 @@ export default function PostsComponent() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        getPosts(postId).then(value => setPosts([{...value}]))
+        postCurrentService(postId).then(data => setPosts([{...data}]))
     }, [postId]);
 
     return (
         <div>
             {
-                posts.map(value => <PostComponent key={value.id} post={value}/>)
+                posts.map(post => <PostComponent post={post} key={post.id}/>)
             }
         </div>
     );

@@ -8,19 +8,17 @@ import PostsComponent from "./components/posts/PostsComponent";
 
 function App() {
   return (
-    <div>
-
-<Routes>
-        <Route path={'/'} element={<MainLayout/>}>
-                <Route path={'todos'} element={<TodosPage/>}/>
-                <Route path={'albums'} element={<AlbumsPage/>}/>
-            <Route path={'comments'} element={<CommentsPage/>}>
-                <Route path={':postId'} element={<PostsComponent/>}/>
-            </Route>
+    <Routes>
+      <Route path={'/'} element={<MainLayout/>}>
+        <Route path={'albums'} element={<AlbumsPage/>}/>
+        <Route path={'comments'} element={<CommentsPage/>}>
+            <Route path={':postId'} element={<PostsComponent/>}/>
         </Route>
+        <Route path={'todos'} element={<TodosPage/>}/>
+      </Route>
+    </Routes>
 
-</Routes>
-    </div>
+
   );
 }
 

@@ -1,10 +1,9 @@
 export default function TodoComponent({todo}) {
-    const {userId, id, title} = todo;
     return (
         <div>
-            <div>userId - {userId}</div>
-            <div>id - {id}</div>
-            <h3>{title}</h3>
+                <div>id - {todo.id}</div>
+                <div>userId - {todo.userId}</div>
+                <h3>{todo.title}</h3>
             <hr/>
         </div>
     );

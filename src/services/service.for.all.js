@@ -1,12 +1,14 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({
-    baseURL:'https://jsonplaceholder.typicode.com'
+const axiosService = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com/'
 });
 
-const getTodos = () => axiosInstance.get('/todos');
-const getAlbums = () =>  axiosInstance.get('/albums');
-const getComments = () => axiosInstance.get('/comments');
-const getPosts = (id) => axiosInstance.get('/posts/' + id).then(value => value.data);
+const albumsService = () => axiosService('/albums');
+const commentsService = () => axiosService('/comments');
+const todosService = () => axiosService('/todos');
+const postsService = () => axiosService('/posts');
+const postCurrentService = (id) => axiosService(`/posts/${id}`)
 
-export {getTodos, getAlbums, getComments, getPosts};
+export {albumsService, commentsService, todosService, postsService, postCurrentService};
+
