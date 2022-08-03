@@ -5,6 +5,7 @@ export default function PostDetail({post}) {
             <div>{post.title}</div>
             <div>{post.id}</div>
             <div>{post.body}</div>
+            <hr/>
         </div>
     );
 }
